@@ -4,11 +4,15 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
   children: React.ReactNode;
+  className?: string;
+  disabled?: boolean;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function Button({
@@ -18,7 +22,8 @@ export default function Button({
   className,
   children,
   disabled,
-  ...props
+  onClick,
+  type = 'button',
 }: ButtonProps) {
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:cursor-not-allowed';
   
@@ -46,7 +51,8 @@ export default function Button({
         className
       )}
       disabled={disabled || loading}
-      {...props}
+      onClick={onClick}
+      type={type}
     >
       {loading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
       {children}
