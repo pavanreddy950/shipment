@@ -1,0 +1,201 @@
+COMPLETE FILE STRUCTURE
+======================
+
+📁 vujis/
+│
+├── 📄 package.json                          # Dependencies and scripts
+├── 📄 tsconfig.json                         # TypeScript configuration
+├── 📄 tailwind.config.ts                    # Tailwind CSS configuration
+├── 📄 postcss.config.js                     # PostCSS configuration
+├── 📄 next.config.js                        # Next.js configuration
+├── 📄 .gitignore                            # Git ignore rules
+│
+├── 📄 README.md                             # Project overview
+├── 📄 SETUP.md                              # Installation guide
+├── 📄 PROJECT_OVERVIEW.md                   # Detailed specifications
+├── 📄 QUICKSTART.md                         # Quick start guide
+├── 📄 FILE_STRUCTURE.txt                    # This file
+│
+├── 📁 app/                                  # Next.js App Router
+│   ├── 📄 layout.tsx                        # Root layout
+│   ├── 📄 page.tsx                          # Landing page
+│   ├── 📄 globals.css                       # Global styles
+│   │
+│   ├── 📁 (auth)/                           # Auth group
+│   │   ├── 📄 layout.tsx                    # Auth layout
+│   │   ├── 📁 login/
+│   │   │   └── 📄 page.tsx                  # Login page
+│   │   ├── 📁 signup/
+│   │   │   └── 📄 page.tsx                  # Signup page
+│   │   └── 📁 forgot-password/
+│   │       └── 📄 page.tsx                  # Password reset
+│   │
+│   └── 📁 (dashboard)/                      # Dashboard group
+│       ├── 📄 layout.tsx                    # Dashboard layout
+│       └── 📁 dashboard/
+│           ├── 📄 page.tsx                  # Main dashboard
+│           ├── 📁 search/
+│           │   └── 📄 page.tsx              # Search & discovery
+│           ├── 📁 companies/
+│           │   ├── 📄 page.tsx              # Companies list
+│           │   └── 📁 [id]/
+│           │       └── 📄 page.tsx          # Company profile
+│           ├── 📁 email-generator/
+│           │   └── 📄 page.tsx              # AI email generator
+│           ├── 📁 billing/
+│           │   └── 📄 page.tsx              # Billing & credits
+│           ├── 📁 exports/
+│           │   └── 📄 page.tsx              # Exports & downloads
+│           └── 📁 settings/
+│               └── 📄 page.tsx              # Settings
+│
+├── 📁 components/                           # React components
+│   ├── 📁 ui/                               # UI components
+│   │   ├── 📄 Button.tsx                    # Button component
+│   │   ├── 📄 Input.tsx                     # Input component
+│   │   ├── 📄 Card.tsx                      # Card component
+│   │   ├── 📄 Badge.tsx                     # Badge component
+│   │   ├── 📄 StatCard.tsx                  # Stat card component
+│   │   ├── 📄 LoadingSpinner.tsx            # Loading spinner
+│   │   └── 📄 Skeleton.tsx                  # Skeleton loaders
+│   │
+│   ├── 📁 charts/                           # Chart components
+│   │   ├── 📄 LineChart.tsx                 # Line chart
+│   │   ├── 📄 BarChart.tsx                  # Bar chart
+│   │   └── 📄 PieChart.tsx                  # Pie chart
+│   │
+│   ├── 📁 landing/                          # Landing page components
+│   │   ├── 📄 Navbar.tsx                    # Navigation bar
+│   │   ├── 📄 Hero.tsx                      # Hero section
+│   │   ├── 📄 Features.tsx                  # Features section
+│   │   ├── 📄 Pricing.tsx                   # Pricing section
+│   │   └── 📄 Footer.tsx                    # Footer
+│   │
+│   └── 📁 dashboard/                        # Dashboard components
+│       ├── 📄 Sidebar.tsx                   # Sidebar navigation
+│       └── 📄 Header.tsx                    # Dashboard header
+│
+├── 📁 lib/                                  # Utilities and helpers
+│   ├── 📄 utils.ts                          # Utility functions
+│   └── 📁 data/                             # Mock data
+│       ├── 📄 mock-generator.ts             # Data generation
+│       └── 📄 mock-data.ts                  # Mock data store
+│
+└── 📁 types/                                # TypeScript types
+    └── 📄 index.ts                          # Type definitions
+
+
+TOTAL FILES: 50+
+================
+
+Configuration Files: 7
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+├── postcss.config.js
+├── next.config.js
+├── .gitignore
+└── README.md
+
+Documentation Files: 4
+├── SETUP.md
+├── PROJECT_OVERVIEW.md
+├── QUICKSTART.md
+└── FILE_STRUCTURE.txt
+
+Page Files: 13
+├── Landing (1)
+├── Auth Pages (3)
+└── Dashboard Pages (9)
+
+Component Files: 20
+├── UI Components (7)
+├── Chart Components (3)
+├── Landing Components (5)
+└── Dashboard Components (2)
+
+Utility Files: 3
+├── utils.ts
+├── mock-generator.ts
+└── mock-data.ts
+
+Type Definition Files: 1
+└── types/index.ts
+
+Layout Files: 3
+├── app/layout.tsx
+├── (auth)/layout.tsx
+└── (dashboard)/layout.tsx
+
+Style Files: 1
+└── globals.css
+
+
+KEY DIRECTORIES EXPLAINED
+==========================
+
+/app
+- Next.js 14 App Router structure
+- Automatic routing based on folder structure
+- Server and client components
+- Grouped routes using (parentheses)
+
+/components
+- Reusable React components
+- Organized by category (ui, charts, landing, dashboard)
+- TypeScript with proper prop types
+- Framer Motion animations
+
+/lib
+- Utility functions (formatting, authentication, etc.)
+- Mock data generation (5,000+ companies, 12,000+ shipments)
+- Helper functions for search and filtering
+
+/types
+- Centralized TypeScript type definitions
+- Interfaces for all data models
+- Type safety throughout the application
+
+
+INSTALLATION COMMAND
+====================
+
+npm install
+
+This installs:
+- next (14.1.0)
+- react (18.2.0)
+- react-dom (18.2.0)
+- framer-motion (11.0.3)
+- lucide-react (0.314.0)
+- recharts (2.10.3)
+- date-fns (3.2.0)
+- typescript (5.3.3)
+- tailwindcss (3.4.1)
+- postcss (8.4.33)
+- autoprefixer (10.4.17)
+- eslint (8.56.0)
+- eslint-config-next (14.1.0)
+
+
+RUN COMMAND
+===========
+
+npm run dev
+
+Opens at: http://localhost:3000
+
+
+BUILD COMMAND
+=============
+
+npm run build
+npm start
+
+
+DEMO CREDENTIALS
+================
+
+Email: any@email.com
+Password: anything
+(Demo mode - all credentials work!)
