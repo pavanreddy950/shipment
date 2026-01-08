@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  MapPin, 
-  Calendar, 
-  TrendingUp, 
-  Mail, 
-  Phone, 
-  Lock, 
+import {
+  Building2,
+  MapPin,
+  Calendar,
+  TrendingUp,
+  Mail,
+  Phone,
+  Lock,
   Unlock,
   ExternalLink,
   CheckCircle
@@ -20,13 +20,22 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import LineChart from '@/components/charts/LineChart';
-import { 
-  getCompanyById, 
-  getShipmentsByCompany, 
+import {
+  getCompanyById,
+  getShipmentsByCompany,
   getContactsByCompany,
-  mockUser 
+  mockUser,
+  mockCompanies
 } from '@/lib/data/mock-data';
 import { formatNumber, formatDate, formatCurrency } from '@/lib/utils';
+
+// Generate static params for a subset of companies
+export function generateStaticParams() {
+  // Generate static pages for first 100 companies to keep build size reasonable
+  return mockCompanies.slice(0, 100).map((company) => ({
+    id: company.id,
+  }));
+}
 
 export default function CompanyProfilePage() {
   const params = useParams();
