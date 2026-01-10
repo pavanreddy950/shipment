@@ -52,6 +52,90 @@ export interface HSCode {
   category: string;
 }
 
+// Extended HSN Code types for the HSN Codes feature
+export interface HSNSection {
+  id: string;
+  number: string; // Roman numeral (I, II, III, etc.)
+  title: string;
+  description: string;
+  chaptersRange: string; // e.g., "01-05"
+  totalCodes: number;
+  icon: string;
+}
+
+export interface HSNChapter {
+  id: string;
+  chapterNumber: string; // 2-digit (01-97)
+  sectionId: string;
+  title: string;
+  description: string;
+  totalHeadings: number;
+  totalCodes: number;
+}
+
+export interface HSNHeading {
+  id: string;
+  headingCode: string; // 4-digit
+  chapterId: string;
+  description: string;
+  subheadings: HSNSubheading[];
+}
+
+export interface HSNSubheading {
+  id: string;
+  code: string; // 6-digit or 8-digit
+  headingId: string;
+  description: string;
+  dutyRate?: string;
+  unit?: string;
+}
+
+export interface HSNCodeDetail {
+  id: string;
+  code: string;
+  fullCode: string; // 8-digit with formatting
+  description: string;
+  longDescription: string;
+  category: string;
+  section: string;
+  chapter: string;
+  heading: string;
+  dutyRate: string;
+  unit: string;
+  gstRate?: string;
+  // Analytics
+  totalShipments: number;
+  totalValue: number;
+  avgShipmentValue: number;
+  topImporters: string[];
+  topExporters: string[];
+  topCountries: { country: string; percentage: number }[];
+  monthlyTrend: { month: string; value: number; shipments: number }[];
+  lastUpdated: string;
+  // Related
+  relatedCodes: string[];
+  commonProducts: string[];
+}
+
+export interface HSNSearchResult {
+  code: string;
+  description: string;
+  category: string;
+  chapter: string;
+  matchType: 'code' | 'description' | 'category';
+  relevanceScore: number;
+}
+
+export interface HSNAnalytics {
+  totalCodes: number;
+  totalSections: number;
+  totalChapters: number;
+  topCategories: { category: string; count: number; percentage: number }[];
+  topUsedCodes: { code: string; description: string; shipments: number; value: number }[];
+  categoryDistribution: { category: string; value: number }[];
+  monthlyUsage: { month: string; searches: number; shipments: number }[];
+}
+
 export interface ChartData {
   label: string;
   value: number;

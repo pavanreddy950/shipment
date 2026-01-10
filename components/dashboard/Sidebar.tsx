@@ -17,6 +17,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Hash,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -24,6 +25,7 @@ const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', href: '/dashboard' },
   { icon: Search, label: 'Search & Discovery', href: '/dashboard/search' },
   { icon: Building2, label: 'Companies', href: '/dashboard/companies' },
+  { icon: Hash, label: 'HSN Codes', href: '/dashboard/hsn-codes' },
   { icon: Ship, label: 'Shipment Tracker', href: '/dashboard/shipment-tracker' },
   { icon: Mail, label: 'AI Email Generator', href: '/dashboard/email-generator' },
   { icon: CreditCard, label: 'Billing & Credits', href: '/dashboard/billing' },
